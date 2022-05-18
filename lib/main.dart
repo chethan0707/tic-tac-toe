@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -45,16 +47,20 @@ class _HomeState extends State<Home> {
 
   bool checkIfWon(int x, int y) {
     if (grid[x][0] == grid[x][1] && grid[x][1] == grid[x][2]) {
+
       return true;
-    } else if (grid[0][y] == grid[1][y] && grid[1][y] == grid[2][y]) {
+    }
+    if (grid[0][y] == grid[1][y] && grid[1][y] == grid[2][y]) {
+
       return true;
-    } else if (grid[0][0] != "" && grid[1][1] != "" && grid[2][2] != "") {
-      if (grid[0][0] == grid[1][1] &&
-          grid[1][1] == grid[2][2] &&
-          grid[0][0] == grid[2][2]) {
+    }
+    if (grid[0][0] != "" && grid[1][1] != "" && grid[2][2] != "") {
+
+      if (grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2]) {
         return true;
       }
-    } else if (grid[2][0] != "" && grid[1][1] != "" && grid[0][2] != "") {
+    }
+    if (grid[2][0] != "" && grid[1][1] != "" && grid[0][2] != "") {
       if (grid[0][2] == grid[1][1] && grid[1][1] == grid[2][0]) {
         return true;
       }
